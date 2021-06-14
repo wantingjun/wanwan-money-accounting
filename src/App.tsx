@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Nav from "components/Nav";
 import Layout from "components/Layout";
+
 import {
   HashRouter as Router,
   Switch,
@@ -9,7 +10,10 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-
+import Statistics from "views/Statistics";
+import Money from "views/money";
+import Tags from "views/tags"
+import NoMatch from "views/NoMatch"
 function App() {
   return (
       <Router>
@@ -34,37 +38,10 @@ function App() {
       </Router>
   );
 }
-function NoMatch(){
-  return (
-      <div>
-        页面不存在
-      </div>
-  )
-}
-function Statistics() {
-  return (
-<Layout>
-  <h2>统计页面</h2>
-</Layout>
 
 
-  );
-}
 
-function Tags() {
-  return (
-      <Layout>
-        <h2>标签页</h2>
-      </Layout>
 
-  );
-}
 
-function Money() {
-  return (
-      <Layout>
-        <h2>记账页</h2>
-      </Layout>
-  );
-}
+
 export default App
