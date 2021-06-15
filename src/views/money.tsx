@@ -47,6 +47,27 @@ const  NotesSection = styled.section`
     }
 `
 const  CategorySection = styled.section`
+    font-size:24px;
+    > ul{
+      display: flex;
+      background: #c4c4c4;
+      > li {
+      width:50%;
+      text-align:center;
+      padding:16px 0;
+      position:relative;
+      &.selected::after{
+      content:'';
+      display:block;
+      height:3px;
+      position:absolute;
+      background:#333;
+      bottom:0;
+      width:100% ;
+      left:0;     
+      }
+      }
+    }
 `
 const  NumberpageSection = styled.section`
 `
@@ -71,7 +92,7 @@ function Money() {
             </NotesSection>
             <CategorySection>
                 <ul>
-                    <li>收入</li>
+                    <li className="selected">收入</li>
                     <li>支出</li>
                 </ul>
             </CategorySection>
