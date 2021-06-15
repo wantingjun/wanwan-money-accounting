@@ -26,6 +26,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { extendDefaultPlugins } = require('svgo');
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -371,7 +372,13 @@ module.exports = function (webpackEnv) {
               test: /\.svg$/,
               use: [
                 {loader: 'svg-sprite-loader', options: {}},
-                {loader: 'svgo-loader', options: {}}
+                {
+                  loader: 'svgo-loader', options: {
+                    // plugins: [
+                    //   {removeAttrs: {attrs: 'fill'}}
+                    // ]
+                  }
+                }
               ]
             },
             // TODO: Merge this config once `image/avif` is in the mime-db

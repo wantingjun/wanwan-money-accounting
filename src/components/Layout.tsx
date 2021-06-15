@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 1px solid red;
+
   height:100vh; //固定页面高度
   display:flex;
   flex-direction: column;

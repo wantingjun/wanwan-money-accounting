@@ -14,8 +14,14 @@ import Statistics from "views/Statistics";
 import Money from "views/money";
 import Tags from "views/tags"
 import NoMatch from "views/NoMatch"
+
+
+const AppWrapper = styled.div`
+  color:#333;
+`
 function App() {
   return (
+      <AppWrapper>
       <Router>
             <Switch >
               <Route path="/tags">
@@ -35,6 +41,7 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       </Router>
+      </AppWrapper>
   );
 }
 
