@@ -4,9 +4,13 @@ import styled from "styled-components";
 
 const  TagsSection = styled.section`
     background: #ffffff;
-    border:1px solid red;
     padding:12px 16px;
-    > ol{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    > ol {
         margin:0 -12px;
         > li{
             background: #d9d9d9;
@@ -129,9 +133,14 @@ const  NumberpageSection = styled.section`
 
 `
 
+const MyLayout = styled(Layout)`
+border: 1px solid red;
+display:flex;
+flex-direction: column;
+`
 function Money() {
     return (
-        <Layout>
+        <MyLayout className="hi">
             <TagsSection>
                 <ol>
                     <li>衣</li>
@@ -173,7 +182,7 @@ function Money() {
 
                 </div>
             </NumberpageSection>
-        </Layout>
+        </MyLayout>
     );
 };
 export default Money;
