@@ -17,7 +17,6 @@ import NoMatch from "views/NoMatch"
 function App() {
   return (
       <Router>
-
             <Switch >
               <Route path="/tags">
                 <Tags />
