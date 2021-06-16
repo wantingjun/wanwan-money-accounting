@@ -17,14 +17,8 @@ function Money() {
             <TagsSection>
             </TagsSection>
             <NoteSection>
-
             </NoteSection>
-            <CategorySection>
-                <ul>
-                    <li className="selected">收入</li>
-                    <li>支出</li>
-                </ul>
-            </CategorySection>
+            <CategorySection/>
             <NumberpageSection>
                 <div className="output">100</div>
                 <div className="pad clearfix">
