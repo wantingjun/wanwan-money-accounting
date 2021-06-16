@@ -7,22 +7,14 @@ import {CategorySection} from "./Money/CategorySection";
 import {NumberpageSection} from "./Money/NumberTagSection";
 
 const MyLayout = styled(Layout)`
-border: 1px solid red;
-display:flex;
-flex-direction: column;
+        display:flex;
+        flex-direction: column;
 `
 function Money() {
     // @ts-ignore
     return (
         <MyLayout className="hi">
             <TagsSection>
-                <ol>
-                    <li>衣</li>
-                    <li>食</li>
-                    <li>住</li>
-                    <li>行</li>
-                </ol>
-                <button>新增标签</button>
             </TagsSection>
             <NotesSection>
                 <label>
