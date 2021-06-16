@@ -61,7 +61,16 @@ const  Wrapper = styled.section`
 
 `
 const NumberpageSection:React.FC =()=>{
-    const [output,setOutput]= useState('0');
+    const [output,_setOutput]= useState('0');
+    const setOutput=(output:string)=>{
+        if(output.length > 16){
+            output= output.slice(0,16)
+        }
+        else if(output.length === 0){
+            output = '0'
+        }
+        _setOutput(output)
+    }
     const onClickNumber=(number:number)=>{
 
     }
@@ -86,10 +95,22 @@ const NumberpageSection:React.FC =()=>{
                 }
                 console.log(text)
                 break;
+            case '.':
+                if(output.indexOf('.')>=0){
+                    return ;
+                }
+                setOutput(output+'.')
+                break;
             case '删除':
+                if(output.length === 1){
+                    setOutput('0')
+                } else{
+                    setOutput(output.slice(0,-1))
+                }
                 console.log('delete')
                 break;
             case '清空':
+                setOutput('')
                 console.log('清空')
                 break;
             case 'ok':
