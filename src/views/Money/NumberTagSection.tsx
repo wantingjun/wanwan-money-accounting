@@ -2,23 +2,38 @@ import styled from "styled-components";
 import React, {useState} from "react";
 import Wrapper from "./NumberPagSection/Wrapper";
 import {generateOutput} from "./NumberPagSection/generateOutput";
+type Props= {
+    value: number,
+    onChange: (value: number) => void;
+    onOk?:()=>void;
+}
+const NumberpageSection:React.FC<Props> =(props)=>{
+    //const [output,_setOutput]= useState('0');
+    const output=props.value.toString()
 
-const NumberpageSection:React.FC =()=>{
-    const [output,_setOutput]= useState('0');
     const setOutput=(output:string)=>{
+        let value
         if(output.length > 16){
-            output= output.slice(0,16)
+            value= parseFloat(output.slice(0,16))
         }
         else if(output.length === 0){
-            output = '0'
+            value = 0
         }
-        _setOutput(output)
+        else{
+            value = parseFloat(output)
+        }
+        //_setOutput(output)
+        props.onChange(value)
     }
     const onClickButtonWrapper=(e:React.MouseEvent)=>{
         const text = (e.target as HTMLButtonElement).textContent;
         if(text === null){return ;}
         if(text === 'ok'){
             //todo
+            if( props.onOk){
+                props.onOk()
+            }
+
             return ;
         }
         if('0123456789.'.split('').concat(['删除','清空']).indexOf(text)>=0){

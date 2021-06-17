@@ -32,11 +32,15 @@ const  Wrapper = styled.section`
         margin-top: 6px;
     }
 `
-
+type Props={
+    value:string[];
+    onChange:(selected:string[])=>void;
+}
 //类型React.FunctionComponent,间歇React.FC
-const  TagsSection:React.FunctionComponent=(props)=>{
+const  TagsSection:React.FunctionComponent<Props>=(props)=>{
     const [tags,setTags] = useState<string[]>(['衣','食','住','行']);
-    const [selectedTags,setSelectedTags] = useState<string[]>([]);
+    //const [selectedTags,setSelectedTags] = useState<string[]>([]);
+    const selectedTags= props.value;
     const onAddTag=()=>{
         const tagName = window.prompt('新标签的名称为');
         if(tagName !== null){
@@ -47,10 +51,10 @@ const  TagsSection:React.FunctionComponent=(props)=>{
         const index = selectedTags.indexOf(tag);
         if(index>=0){ //如果tag已被选中，就复制所有没有被选中的tag，作为新的selectedTags
             // 不能直接改selectedTags
-            setSelectedTags(selectedTags.filter(t=> t!==tag))
+            props.onChange(selectedTags.filter(t=> t!==tag))
         }
         else{//否则，新的tag加上之前的selectedTags，组成新的selectedTags
-            setSelectedTags([...selectedTags,tag])
+            props.onChange([...selectedTags,tag])
         }
     }
     const getClass= (tag:string)=>selectedTags.indexOf(tag) >=0 ? 'selected' : '';
