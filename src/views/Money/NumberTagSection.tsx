@@ -10,7 +10,6 @@ type Props= {
 const NumberpageSection:React.FC<Props> =(props)=>{
     //const [output,_setOutput]= useState('0');
     const output=props.value.toString()
-
     const setOutput=(output:string)=>{
         let value
         if(output.length > 16){
