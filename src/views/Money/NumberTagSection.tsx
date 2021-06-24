@@ -22,6 +22,7 @@ const NumberpageSection:React.FC<Props> =(props)=>{
             value = parseFloat(output)
         }
         //_setOutput(output)
+        console.log(output,value)
         props.onChange(value)
     }
     const onClickButtonWrapper=(e:React.MouseEvent)=>{
