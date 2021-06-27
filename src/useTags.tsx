@@ -28,11 +28,20 @@ const useTags = ()=>{
         TagsClone.splice(index,1,{id:id,name:obj.name});
         setTags(TagsClone)
     };
+    const deleteTag=(id:number)=>{
+        //获取删除的下标
+        const index = findTagIndex(id);
+        // 神拷贝tags
+        const TagsClone = JSON.parse(JSON.stringify(tags));
+        TagsClone.splice(index,1);
+        setTags(TagsClone)
+    }
     return {
         tags:tags,
         setTags:setTags,
         findTag:findTag,
-        updateTag:updateTag
+        updateTag:updateTag,
+        deleteTag:deleteTag
     }
 }
 export default useTags;

@@ -27,33 +27,40 @@ const InputWrapper = styled.div`
 `
 
 const Tag: React.FC = (props)=>{
-    const {findTag,updateTag} = useTags()
-    let {id:idString} = useParams<Params>()
-    const tag = findTag(parseInt(idString))
-    return (
-        <Layout>
-            <Topbar>
-                <Icon name="left"/>
-                <span>编辑标签</span>
-                <Icon/>
-            </Topbar>
-                <InputWrapper>
-                <Input label="标签名" type="text" placeholder="标签名"
-                       value={tag.name}
-                        onChange={(e)=>{
-                            updateTag(tag.id,{name:e.target.value})
-                        }}
-                ></Input>
-                </InputWrapper>
-                <Center>
-                    <Space/>
-                    <Space/>
-                <Button>删除标签</Button>
-                    <Space/>
-                    <Space/>
-                </Center>
-        </Layout>
+    const {findTag,updateTag,deleteTag} = useTags()
+    let {id:idString} = useParams<Params>() //路由传过来的id，重命名为idString
+    const tag = findTag(parseInt(idString)) //根据idString寻找tag，tag是一个对象，包括id和name
+    const tagContent= (tag:{id:number,name:string})=> (<div>
+        <InputWrapper>
+            <Input label="标签名" type="text" placeholder="标签名"
+                   value={tag.name}
+                   onChange={(e)=>{
+                       updateTag(tag.id,{name:e.target.value})
+                   }}
+            ></Input>
+        </InputWrapper>
+        <Center>
+            <Space/>
+            <Space/>
+            <Button onClick={()=> deleteTag(tag.id)}>删除标签</Button>
+            <Space/>
+            <Space/>
+        </Center>
+    </div>
     )
+
+        return (
+            <Layout>
+                <Topbar>
+                    <Icon name="left"/>
+                    <span>编辑标签</span>
+                    <Icon/>
+                </Topbar>
+                {tag ?  tagContent(tag) : <Center>tag不存在</Center>}
+
+            </Layout>
+        )
+
 
 }
 export default Tag
