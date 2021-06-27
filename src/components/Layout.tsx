@@ -14,7 +14,7 @@ flex-grow:1;
 `
 
 const Layout=(props:any)=>{
-    console.log(props)
+   // console.log(props)
     return (
         <Wrapper>
             <Main className={props.className}>

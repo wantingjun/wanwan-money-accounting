@@ -21,20 +21,10 @@ const useTags = ()=>{
         return result
     };
     const updateTag =(id:number,obj:{name:string})=>{
-        const index = findTagIndex(id);
-        // 神拷贝tags
-        const TagsClone = JSON.parse(JSON.stringify(tags));
-        // tagsClone的第index个删掉，换成id:number,obj:{name:string}
-        TagsClone.splice(index,1,{id:id,name:obj.name});
-        setTags(TagsClone)
+        setTags(tags.map(tag=>tag.id === id? {id,name:obj.name} :tag))
     };
     const deleteTag=(id:number)=>{
-        //获取删除的下标
-        const index = findTagIndex(id);
-        // 神拷贝tags
-        const TagsClone = JSON.parse(JSON.stringify(tags));
-        TagsClone.splice(index,1);
-        setTags(TagsClone)
+        setTags(tags.filter(tag=>tag.id !== id))
     }
     return {
         tags:tags,
