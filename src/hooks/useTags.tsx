@@ -3,7 +3,7 @@ import {createId} from "lib/createId";
 import {useUpdate} from "./useUpdate";
 
 
-const useTags = ()=>{
+const useTags = ()=> {
     const [tags,setTags] = useState<{id:number;name:string}[]>([]);
 
     useEffect(()=>{
@@ -19,7 +19,7 @@ const useTags = ()=>{
             ]
         }
         setTags(localTags)
-    },[]) // 组件挂载时执行
+    },[])// 组件挂载时执行
     useUpdate(()=>{
         console.log('set')
         window.localStorage.setItem('tags',JSON.stringify(tags))
