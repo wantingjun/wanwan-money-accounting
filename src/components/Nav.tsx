@@ -42,17 +42,17 @@ const X=()=>{
         <NavWrapper>
             <ul>
                 <li>
-                    <NavLink
+                    <NavLink exact
                         to="/tags" activeClassName="selected">
                         <Icon name="tag"/>标签页</NavLink>
                 </li>
                 <li>
 
-                    <NavLink to="/money" activeClassName="selected"><Icon name="money"/>记账</NavLink>
+                    <NavLink exact to="/money" activeClassName="selected"><Icon name="money"/>记账</NavLink>
                 </li>
                 <li>
 
-                    <NavLink to="/statistics" activeClassName="selected"><Icon name="chart"/>统计页</NavLink>
+                    <NavLink  exact to="/statistics" activeClassName="selected"><Icon name="chart"/>统计页</NavLink>
                 </li>
             </ul>
         </NavWrapper>

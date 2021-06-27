@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import Statistics from "views/Statistics";
 import Money from "views/money";
-import Tags from "views/tags"
+import Tags from "./views/Tags"
 import NoMatch from "views/NoMatch"
 import Tag from "./views/Tag";
 

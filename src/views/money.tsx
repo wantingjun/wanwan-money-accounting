@@ -28,6 +28,7 @@ function Money() {
     // @ts-ignore
     return (
         <MyLayout className="hi">
+            {selected.note}
             <TagsSection value={selected.tagIds} onChange={(tagIds)=>onChange({tagIds})}/>
             <NoteSection value={selected.note} onChange={(note)=>onChange({note})}/>
             <CategorySection value={selected.category} onChange={(category)=>onChange({category})}/>
