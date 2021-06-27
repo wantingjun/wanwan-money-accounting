@@ -1,6 +1,7 @@
 {
   "name": "money",
   "version": "0.1.0",
+  "homepage": "https://wantingjun.github.io/wanwan-money-accounting-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
