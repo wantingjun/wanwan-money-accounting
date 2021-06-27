@@ -1,8 +1,6 @@
-import styled from "styled-components";
 import React, {useState} from "react";
 import Wrapper from "./NumberPagSection/Wrapper";
 import {generateOutput} from "./NumberPagSection/generateOutput";
-import {setState} from "jest-circus/build/state";
 type Props= {
     value: number,
     onChange: (value: number) => void;

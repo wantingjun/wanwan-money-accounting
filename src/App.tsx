@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Nav from "components/Nav";
-import Layout from "components/Layout";
 
 import {
   HashRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect
 } from "react-router-dom";
 import Statistics from "views/Statistics";

@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {createId} from "lib/createId";
 import {useUpdate} from "./useUpdate";
 
@@ -10,7 +10,7 @@ const useTags = ()=> {
         //console.log('after mount')
         let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]')
         // 如果长度为0，就是空，push预设值
-        if(localTags.length ==0){
+        if(localTags.length ===0){
             localTags = [
                 {id:createId(), name:'衣'},
                 {id:createId(), name:'食'},
@@ -29,7 +29,7 @@ const useTags = ()=> {
     const findTagIndex = (id:number)=>{
         let result = -1;
         for(let i =0;i<tags.length;i++){
-            if(tags[i].id == id){
+            if(tags[i].id === id){
                 result = i;
                 break;
             }
@@ -49,7 +49,7 @@ const useTags = ()=> {
         }
     };
     const getName=(id:number)=>{ //根据id找tagName
-        const tag = tags.filter(t=>t.id == id)[0]
+        const tag = tags.filter(t=>t.id === id)[0]
         return tag ? tag.name : ''
     }
     return {

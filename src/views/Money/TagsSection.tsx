@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import React, {useState} from "react";
+import React from "react";
 import useTags from "../../hooks/useTags";
-import {createId} from "../../lib/createId";
+
 
 const  Wrapper = styled.section`
     background: #ffffff;
@@ -41,7 +41,7 @@ type Props={
 //类型React.FunctionComponent,间歇React.FC
 const  TagsSection:React.FunctionComponent<Props>=(props)=>{
     //console.log(props)
-    const {tags, setTags,addTag} = useTags()
+    const {tags,addTag} = useTags()
     const selectedTagIds= props.value;
     const onToggleTag=(tagId:number)=>{
         const index = selectedTagIds.indexOf(tagId);

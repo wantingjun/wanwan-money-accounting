@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import React, {useState} from "react";
+import React from "react";
 import useTags from "hooks/useTags";
 import styled from "styled-components";
 import Icon from 'components/Icon'
@@ -28,7 +28,7 @@ const TagList = styled.ol`
   }
 `
 function Tags() {
-   const {tags, setTags,addTag} = useTags()
+   const {tags,addTag} = useTags()
     return (
         <Layout>
             <TagList>
