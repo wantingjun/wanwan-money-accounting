@@ -41,8 +41,7 @@ function Money() {
     }
     // @ts-ignore
     return (
-        <MyLayout className="hi">
-            {JSON.stringify(selected)}
+        <MyLayout scrollTop={9999}>
             <TagsSection value={selected.tagIds} onChange={(tagIds)=>onChange({tagIds})}/>
             <NoteSection value={selected.note} onChange={(note)=>onChange({note})}/>
             <CategoryWrapper>
