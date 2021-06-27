@@ -48,13 +48,18 @@ const useTags = ()=> {
             setTags([...tags,{id:createId(),name:tagName}])
         }
     };
+    const getName=(id:number)=>{ //根据id找tagName
+        const tag = tags.filter(t=>t.id == id)[0]
+        return tag ? tag.name : ''
+    }
     return {
         tags:tags,
         setTags:setTags,
         findTag:findTag,
         updateTag:updateTag,
         deleteTag:deleteTag,
-        addTag:addTag
+        addTag:addTag,
+        getName:getName
     }
 }
 export default useTags;
