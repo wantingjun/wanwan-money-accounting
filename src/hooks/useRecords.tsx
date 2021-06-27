@@ -18,7 +18,7 @@ const useRecords =()=>{
     },[])//挂载时获取
     useUpdate(()=>{
         window.localStorage.setItem('records',JSON.stringify(records))
-    },[records])
+    },records)
     const addRecord=(newRecord:newRecordItem)=>{
         if(newRecord.amount <=0){
             alert('请输入正确金额  ')
