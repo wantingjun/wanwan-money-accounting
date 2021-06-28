@@ -19,7 +19,7 @@ const defaultFormData = {
     amount:0
 }
 const CategoryWrapper= styled.div`
-  background:#c4c4c4;
+  background:#FF6F00;
 `
 function Money() {
     const [selected,setSelected] =useState(defaultFormData)
@@ -42,10 +42,11 @@ function Money() {
     // @ts-ignore
     return (
         <MyLayout scrollTop={9999}>
+
             <TagsSection value={selected.tagIds} onChange={(tagIds)=>onChange({tagIds})}/>
             <NoteSection value={selected.note} onChange={(note)=>onChange({note})}/>
             <CategoryWrapper>
-            <CategorySection value={selected.category} onChange={(category)=>onChange({category})}/>
+                <CategorySection value={selected.category} onChange={(category)=>onChange({category})}/>
             </CategoryWrapper>
             <NumberpageSection value={selected.amount}
                                onChange={(amount)=>onChange({amount})}

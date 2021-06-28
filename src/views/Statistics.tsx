@@ -7,7 +7,7 @@ import useTags from "../hooks/useTags";
 import day from 'dayjs'
 
 const CategoryWrapper= styled.div`
-  background: white;
+  background: #FF6F00;
 `
 const Item = styled.div`
     display:flex;

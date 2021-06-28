@@ -5,21 +5,21 @@ const  Wrapper = styled.section`
     font-size:24px;
     > ul{
       display: flex;
- 
       > li {
+      color:white;
       width:50%;
       text-align:center;
       padding:16px 0;
       position:relative;
       &.selected::after{
-      content:'';
-      display:block;
-      height:3px;
-      position:absolute;
-      background:#333;
-      bottom:0;
-      width:100% ;
-      left:0;     
+          content:'';
+          display:block;
+          height:3px;
+          position:absolute;
+          background:white;
+          bottom:0;
+          width:100% ;
+          left:0;     
       }
       }
     }

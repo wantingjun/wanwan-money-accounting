@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Icon from "./Icon";
 const Label = styled.label`
       display: flex;
       align-items:center;
+      font-weight: bold;
+      
       > span{
           margin-right:16px;
           white-space:nowrap;

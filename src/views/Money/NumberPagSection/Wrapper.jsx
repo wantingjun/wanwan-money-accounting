@@ -22,7 +22,7 @@ const  Wrapper = styled.section`
         height: 128px;
         float: right;
         }
-        &.dot{
+        &.zero{
           width:50%;
         }
         &:nth-child(1){

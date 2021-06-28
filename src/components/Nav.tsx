@@ -28,9 +28,10 @@ line-height:24px;
       height:24px;
     }
       &.selected{
-        color:red;
+      font-weight: bolder;
+        color:#FF6F00;
         .icon {
-           fill:red;
+           fill:#FF6F00;
         }
     }
     }
@@ -44,7 +45,7 @@ const X=()=>{
                 <li>
                     <NavLink exact
                         to="/tags" activeClassName="selected">
-                        <Icon name="tag"/>标签页</NavLink>
+                        <Icon name="tag"/>标签</NavLink>
                 </li>
                 <li>
 
@@ -52,7 +53,7 @@ const X=()=>{
                 </li>
                 <li>
 
-                    <NavLink  exact to="/statistics" activeClassName="selected"><Icon name="chart"/>统计页</NavLink>
+                    <NavLink  exact to="/statistics" activeClassName="selected"><Icon name="chart"/>详情</NavLink>
                 </li>
             </ul>
         </NavWrapper>
